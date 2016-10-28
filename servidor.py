@@ -202,9 +202,6 @@ class ServerWindow(QtGui.QMainWindow):
             # Ponemos el boton de iniciar juego a pausar juego
             self.pushButton_2.setText('Pausar el Juego')
 
-            # Creamos la primer serpiente y la agregamos nuestra lista de
-            # serpientes en el juego
-            snake = self.add_snake()
             # La pintamos en la tabla
             self.draw_snakes()
             # Le asignamos la velocidad
@@ -379,8 +376,8 @@ class ServerWindow(QtGui.QMainWindow):
         """
             Agrega una serpiente en el juego
         """
-        new_snake_id = str(current_id)
-        current_id += 1
+        new_snake_id = str(self.current_id)
+        self.current_id += 1
         new_snake = Snake(new_snake_id)
         correct_snake = False
         while not correct_snake:
